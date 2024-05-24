@@ -14,4 +14,24 @@ public class DBManager
     {
         return new SQLiteConnection (_connectionString);
     }
+
+    public void InitDatabase()
+    {
+        using(var conn = CreateConnection())
+        {
+            conn.Open();
+
+            var cmd = conn.CreateCommand();
+
+            cmd.CommandText = @"CREATE TABLE IF NOT EXISTS 
+                                Products 
+                                (
+                                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                    Name TEXT NOT NULL,
+                                    Price DECIMAL NOT NULL
+                                )";
+
+            cmd.ExecuteNonQuery();
+        }
+    }
 }
