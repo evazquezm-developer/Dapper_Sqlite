@@ -4,5 +4,7 @@ Ejemplo de Dapper con Sqlite realizando un CRUD.
 
 Pasos que realicé para crear éste ejemplo.
 
-1.- $ dotnet new console
-2.- $ dotnet add package System.Data.SQLite --version 1.0.118
+####
+> dotnet new console -n Dapper_Sqlite --framework net6.0
+####
+> dotnet add package System.Data.SQLite --version 1.0.118
